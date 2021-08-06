@@ -1,0 +1,23 @@
+﻿@using ServerSideAuthApp.Models
+@model RegistrationVm
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <span>Enter Your Name:</span> @Html.TextBoxFor(m => m.Name)<br />
+        <span>Enter Your Email:</span> @Html.TextBoxFor(m => m.Email)<br />
+        <span>Enter Your Age:</span> @Html.TextBoxFor(m => m.Age)<br />
+        <span>Enter Your Salary:</span> @Html.TextBoxFor(m => m.Salary)<br />
+
+        <p>@Html.ValidationSummary(false, "", new { @class = "text-danger" })</p>
+        <input type="submit" />
+    }
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+﻿@{
+    String name="" ;
+    String devName = Request.QueryString["developer"]; ;
+    for (int i = 0; i < 10; i++)
+    {
+        name += devName+" ";
+    }
+}
+
+<h2>Welcome</h2>
+<p>@name</p>
+

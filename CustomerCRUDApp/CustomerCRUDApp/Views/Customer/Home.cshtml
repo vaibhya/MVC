@@ -1,0 +1,32 @@
+﻿@using CustomerCRUDApp.Models.ViewModel
+@using CustomerCRUDCoreLib.Data
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Home</h2>
+<div>
+    <table style="width:100%" class="table table-bordered text-center">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Email</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        @foreach (var customer in Model.CustomerList)
+        {
+    <tr>
+        <td>@customer.guid</td>
+        <td>@customer.Name </td>
+        <td>@customer.Location</td>
+        <td>@customer.Email</td>
+        <td>@Html.ActionLink(" ", "Delete", new { id = customer.guid }, new { @class = "glyphicon glyphicon-remove" }) </td>
+        <td>@Html.ActionLink(" ", "Update", new { id = customer.guid }, new { @class = "glyphicon glyphicon-pencil" }) </td>
+    </tr>
+        }
+
+
+    </table>
+</div>
+

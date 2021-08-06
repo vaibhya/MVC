@@ -1,0 +1,22 @@
+﻿@using BankMvcApp.Models.ViewModel
+@model RegistrationVm
+<body>
+
+    @using (Html.BeginForm())
+    {
+        <h2>Register</h2>
+        <span>Enter Username:</span> @Html.TextBoxFor(m => m.Username)<br />
+        <span>Enter Initial Balance:</span> @Html.TextBoxFor(m => m.Balance)<br />
+        <span>Enter Password: </span> @Html.PasswordFor(m => m.Password)<br />
+        <span>Retype Password: </span> @Html.PasswordFor(m => m.ConfirmPassword)<br />
+        <input type="submit" />
+        <p>@Html.ValidationSummary(false, "", new { @class = "text-danger" })</p>
+        <p>@Model.SuccessMessage</p>
+        <p>@ViewBag.message</p>
+        <p>@Html.ActionLink("Already Have an account?Login Here", "Login", "Bank")</p>
+
+        
+
+    }
+
+</body>

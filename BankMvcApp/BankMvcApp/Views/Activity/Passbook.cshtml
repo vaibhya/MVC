@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Passbook</h2>
+@Html.ActionLink("Export to Csv", "ExportToCsv")
+<table style="width:100%">
+    <tr>
+        <th>Amount</th>
+        <th>Activity Type</th>
+        <th>Date&time</th>
+    </tr>
+    @foreach (var arr in ViewBag.logs)
+    {
+        <tr>
+            <td>@arr.Amount</td>
+            <td>@arr.Type </td>
+            <td>@arr.Datetime</td>
+        </tr>
+    }
+
+
+</table>
+

@@ -1,0 +1,34 @@
+﻿@using StudentCRUDAppV2.Models.ViewModel
+@model AddVm
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Add Student</h2>
+<div>
+    @using (Html.BeginForm())
+    {
+        <form>
+            <div class="form-group">
+                <label for="inputUserName">Name</label>
+                @Html.TextBoxFor(m => m.Name, new { @class = "control" })
+                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label for="inputUserName">Roll No</label>
+                @Html.TextBoxFor(m => m.RollNo, new { @class = "control" })
+                @Html.ValidationMessageFor(m => m.RollNo, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label for="inputUserName">Cgpa</label>
+                @Html.TextBoxFor(m => m.Cgpa, new { @class = "control" })
+                @Html.ValidationMessageFor(m => m.Cgpa, "", new { @class = "text-danger" })
+            </div>
+            <button type="submit">Add</button>
+        </form>
+        <p class="text-success">@ViewBag.Message</p>
+    }
+
+</div>
+

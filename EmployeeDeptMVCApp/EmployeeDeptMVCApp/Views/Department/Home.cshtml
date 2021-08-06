@@ -1,0 +1,60 @@
+﻿@using EmployeeDeptMVCApp.Models.ViewModel
+@model HomeVm
+
+
+@using (Html.BeginForm())
+{
+    <h2>Home</h2>
+    <table>
+        <tr>
+            <td>
+                Departments:
+            </td>
+            <td>
+                @Html.DropDownListFor(m => m.DeptId, new SelectList(Session["deptlist"] as SelectList, "Value", "Text"), "Please select")
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Submit" />
+            </td>
+        </tr>
+    </table>
+    <table style="width:100%" class="table table-striped">
+    <tr>
+        <th>EmpNo</th>
+        <th>Ename</th>
+        <th>Designation</th>
+        <th>Manager</th>
+        <th>HireDate</th>
+        <th>Salary</th>
+        <th>Commision</th>
+        <th>DeptNo</th>
+    </tr>
+    @if (ViewBag.list != null)
+    {
+        foreach (var emp in ViewBag.list)
+        {
+            <tr>
+                <td>@emp.EmpNo</td>
+                <td>@emp.Ename </td>
+                <td>@emp.Job</td>
+                <td>@emp.ManagerId</td>
+                <td>@emp.HireDateTime</td>
+                <td>@emp.Salary</td>
+                <td>@emp.Comission</td>
+                <td>@emp.DeptNo</td>
+            </tr>
+        }
+    }
+
+
+
+    </table>
+
+
+}
+
+

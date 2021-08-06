@@ -1,0 +1,19 @@
+﻿@using Login2App.Models
+@model LoginViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <span>Enter Your Name:</span> @Html.TextBoxFor(m => m.UserName)<br />
+        <span>Enter Your Password: </span> @Html.PasswordFor(m => m.UserPassword)<br />
+        <p>@Model.ErrorMessage</p>
+        <input type="submit" />
+    }
+
+</body>
+</html>

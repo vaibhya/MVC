@@ -1,0 +1,22 @@
+﻿@using BankMvcApp.Models.ViewModel
+@model DoTransactionVm
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Welcome to Transaction Page @Session["username"]</h2>
+<div>
+    Transaction
+    @using (Html.BeginForm())
+    {
+        <p>Select Activity Type</p><br>
+        <span>Deposit:</span> @Html.RadioButtonFor(m => m.Activity, "Deposit")<br>
+        <span>Withdraw:</span> @Html.RadioButtonFor(m => m.Activity, "Withdraw")<br>
+        <span>Enter Amount:</span>@Html.TextBoxFor(m=>m.Amount)
+        <input type="submit" />
+        <p>@Model.Message</p>
+    }
+
+</div>
+

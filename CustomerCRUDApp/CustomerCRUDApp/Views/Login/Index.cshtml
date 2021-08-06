@@ -1,0 +1,21 @@
+﻿@using CustomerCRUDApp.Models.ViewModel
+@model LoginVm
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+<body>
+    @using (Html.BeginForm())
+    {
+        <span>Enter Username:</span> @Html.TextBoxFor(m => m.Guid)<br />
+        <p>@Html.ValidationSummary(false, "", new { @class = "text-danger" })</p>
+        <input type="submit" />
+
+
+        <p>@Model.FailMessage</p>
+    }
+
+</body>
+
+

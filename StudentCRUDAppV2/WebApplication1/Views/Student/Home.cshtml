@@ -1,0 +1,33 @@
+﻿@using StudentCRUDAppV2.Models.Data
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Home</h2>
+<div>
+    <table style="width:100%" class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>RollNo</th>
+            <th>CGPA</th>
+            <th>Edit</th>
+        </tr>
+        @foreach (var student in Model.StudentList)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name </td>
+                <td>@student.RollNo</td>
+                <td>@student.Cgpa</td>
+                <td>@Html.ActionLink("Edit ", "Update", new { id = student.Id }, new { @class = "glyphicon glyphicon-pencil" }) </td>
+            </tr>
+        }
+
+
+    </table>
+</div>
+

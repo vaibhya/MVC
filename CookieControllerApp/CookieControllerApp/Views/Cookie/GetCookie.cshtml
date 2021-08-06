@@ -1,0 +1,22 @@
+﻿@{
+    var color = ViewBag.Cookies.Values.ToString();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Cookie</title>
+</head>
+<body style="background-color:@color">
+
+    <h1>Cookie Details</h1>
+    <p>
+        Name: @ViewBag.Cookies.Name.ToString()<br>
+        Value: @color<br>
+        Path: @ViewBag.Cookies.Path<br>
+        Expires: @Session["expire"]<br>
+
+    </p>
+
+
+</body>
+</html>
